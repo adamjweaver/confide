@@ -41,7 +41,7 @@ class ConfideEloquentRepository implements ConfideRepository
     {
         if (! $this->model)
         {               
-            $this->model = $this->app['config']->get('auth.model');
+            $this->model = $this->app['config']->get('auth.multi.user.model');
         }
 
         if(is_object($this->model))

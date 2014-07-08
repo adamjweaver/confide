@@ -60,7 +60,7 @@ class Confide
      */
     public function user()
     {
-        return $this->app['auth']->user();
+        return $this->app['auth']->user()->get();
     }
 
     /**
@@ -111,7 +111,7 @@ class Confide
             {
                 $remember = isset($credentials['remember']) ? $credentials['remember'] : false;
 
-                $this->app['auth']->login( $user, $remember );
+                $this->app['auth']->user()->login( $user, $remember );
                 return true;
             }
         }
@@ -215,7 +215,7 @@ class Confide
      */
     public function logout()
     {
-        $this->app['auth']->logout();
+        $this->app['auth']->user()->logout();
     }
 
     /**
